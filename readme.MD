@@ -19,7 +19,30 @@ you can check by this command
 ```postgres-psql
 select * from pg_settings where name='wal_level';
 ```
-It should return 'logical' if it is not, you can change it in postgresql.conf file
+It should return 'logical' if it is not, you can change it in postgresql.conf file and reconnect to PostgreSQL
+
+## Configuration
+### Source config
+![add_source_connector.sh](scripts/add_source_connector.sh)
+```json
+{
+  "database.hostname": "IP address of Postgres database",
+  "database.port": "Port of Postgres database",
+  "database.user": "Username for Postgres database",
+  "database.password": "Password for Postgres database",
+  "database.dbname": "DB name",
+  "table.include.list": "Source Table name"
+}
+```
+![add_sink_connector.sh](scripts/add_sink_connector.sh)
+```json
+{
+        "topics": "Topic to listen, it can be checked with List Topics command after adding source connector",
+        "connection.uri": "Connection uri for mongodb",
+        "database": "Mongo db name",
+        "collection": "collection to write"
+    }
+```
 
 ## Docker commands
 
