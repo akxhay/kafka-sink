@@ -11,6 +11,16 @@ This Project will be used for setting up a Kafka sink connector to achieve data 
 
 **MongoDb:**  (Recommended mongod Version: 6.0.6)
 
+**wal_level = logical**
+
+wal_level logical is required for Debezium because it  ensures that PostgreSQL logs the necessary information in the WAL to facilitate accurate, granular, and consistent change data capture for  streaming purposes. 
+
+you can check by this command
+```postgres-psql
+select * from pg_settings where name='wal_level';
+```
+It should return 'logical' if it is not, you can change it in postgresql.conf file
+
 ## Docker commands
 
 #### Run docker
