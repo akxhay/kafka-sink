@@ -102,3 +102,25 @@ docker exec -it kafka /bin/bash -c "/usr/bin/kafka-console-consumer --topic sour
 ```shell
 docker exec -it kafka /bin/bash -c "/usr/bin/kafka-console-producer --topic source.public.student_stream_test --bootstrap-server kafka:29092"
 ```
+
+
+### Sql and mongo command to verify
+```postgres-sql
+INSERT INTO public.student_stream_test (first_name, last_name) VALUES ('Akshay', 'Sharma');
+```
+```shell
+use SinkDb
+db.student_stream_test.find({})
+
+```
+Result
+```json
+[{
+  "_id": {
+    "$oid": "66043a8a9e0ee0abbc175f4c"
+  },
+  "last_name": "Sharma",
+  "id": 1,
+  "first_name": "akshay"
+}]
+```
