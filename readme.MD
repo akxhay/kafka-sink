@@ -1,11 +1,11 @@
 # Kafka sink
 
 ## Functionality
-This Project will be used for setting up a Kafka sink connector to achieve this data streaming between Postgres and MongoDB.
+This Project will be used for setting up a Kafka sink connector to achieve data streaming between Postgres and MongoDB.
 
 ## Prerequisites
 
-**Docker:**  (Recommended Engine Version: 25.0.3)
+**Docker:**  (Recommended Docker Engine Version: 25.0.3)
 
 **Postgres:**  (Recommended psql Version: 16.2)
 
@@ -13,28 +13,28 @@ This Project will be used for setting up a Kafka sink connector to achieve this 
 
 ## Docker commands
 
-
-### Run docker
+#### Run docker
 ```shell
 docker-compose up -d
 ```
 
-### Stop docker
+#### Stop docker
 ```shell
 docker-compose down
 ```
 
-### Stop docker with removing all images
+#### Stop docker with removing all images
 ```shell
 docker-compose down -v --rmi all
 ```
+### Connector commands
 
-### Check current connectors
+#### Check current connectors
 ```shell
 docker exec -it kafka /bin/bash -c "curl -X GET http://connect:8083/connectors"
 ```
 
-### Delete if needed
+#### Delete if needed
 ```shell
 docker exec -it kafka /bin/bash -c "curl -X DELETE http://connect:8083/connectors/mongo-sink-student_stream_test-connector"
 docker exec -it kafka /bin/bash -c "curl -X DELETE http://connect:8083/connectors/postgres-source-student_stream_test-connector"
@@ -54,7 +54,7 @@ docker exec kafka /bin/bash -c "sh /usr/bin/add_source_connector.sh"
 ```
 
 
-### Some kafka commands
+### Kafka commands
 #### List Topics
 ```shell
 docker exec -it kafka /bin/bash -c "/usr/bin/kafka-topics --list  --bootstrap-server kafka:29092"

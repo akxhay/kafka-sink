@@ -42,9 +42,7 @@ update  public.student_stream_test set first_name = 'akshay' where id = 103;]]><
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="949f5bf3-d230-4b3f-baab-ede6938a2db7" object-ref="consoles/localhost" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="949f5bf3-d230-4b3f-baab-ede6938a2db7" />
